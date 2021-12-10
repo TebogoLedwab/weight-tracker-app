@@ -15,7 +15,7 @@
           <a class="nav-link" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
             aria-expanded="false" aria-label="Toggle navigation" routerLink="/">Sign in</a>
         </li>
-        <li class="nav-item" >
+        <li class="nav-item" (click)="openModal(signup)">
           <a class="nav-link" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
             aria-expanded="false" aria-label="Toggle navigation" routerLink="/">Sign up</a>
         </li>
@@ -23,3 +23,8 @@
       
     </div>
   </nav>
+
+  <ng-template #signup>
+    <signup></signup>
+  </ng-template>
+  

@@ -5,5 +5,5 @@ export interface User {
     email: string;
     password?: string;
     age?: string;
-    weight: string;
+    weight?: string;
 }  

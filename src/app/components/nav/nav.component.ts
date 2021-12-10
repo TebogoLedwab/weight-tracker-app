@@ -18,4 +18,8 @@ export class NavComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+
+  openModal (template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 }
