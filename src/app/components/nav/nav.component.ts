@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-nav',
+  selector: 'Nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
+  modalRef!: BsModalRef;
+  user: any;
+  dropNav: any;
 
-  constructor() { }
+  constructor(
+    private modalService: BsModalService,
+    public userService: UserService
+  ) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
