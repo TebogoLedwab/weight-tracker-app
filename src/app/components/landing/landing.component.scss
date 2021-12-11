@@ -1,0 +1,41 @@
+.landing{
+    display: flex;
+    flex-direction: column;
+
+
+    .landing__intro {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        background-image: linear-gradient(
+            to right top,
+            #eb6964af,
+            #eb6864af,
+            #eb6864af, 
+            #eb6864af,
+            #eb6864af,
+            #ef7179af,
+            #f07b8eaf,
+            #ef86a0af,
+            #e8a0c2af,
+            #e0bad9af,
+            #ddd1e4af,
+            #e5e5e500
+          ),
+          url("../../../assets/images/scalelanding.jpg");
+    
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+        h1 {
+          margin-top: -50px;
+          color: #ffffff;
+          font-style: italic;
+        }
+      }
+
+}

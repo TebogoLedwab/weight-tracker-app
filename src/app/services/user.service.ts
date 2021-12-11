@@ -6,12 +6,12 @@ import {
 } from "@angular/common/http";
 
 import { Observable, throwError } from "rxjs";
-import { catchError, map } from "rxjs/operators";
 
 import { environment } from "src/environments/environment";
 import { User } from "../models/user";
 import { Router } from "@angular/router";
 import { AlertService } from "./alert.service";
+import { StoreService } from './store.service';
 
 
 
@@ -28,7 +28,8 @@ export class UserService {
     private http: HttpClient,
     private httpClient: HttpClient,
     public router: Router,
-    public alert: AlertService
+    public alert: AlertService,
+    private storeService: StoreService
   ) { }
 
   
@@ -53,4 +54,27 @@ export class UserService {
       let user = localStorage.getItem("user");
       return user !== null ? true : false;
     }
+
+    //user logout
+    logout(){
+      localStorage.removeItem("user");
+      this.storeService.setUser(null!);
+      this.router.navigate(["/"]);
+      this.alert.success(`Logged out`)
+    }
+
+    //handling HTTP errors
+    handleError(error: HttpErrorResponse) {
+      let msg = "";
+      if (error.error instanceof ErrorEvent) {
+        // client-side error
+        msg = error.error.message;
+      } else {
+        // server-side error
+        msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      }
+  
+      return throwError(msg);
+    }
+  
 }

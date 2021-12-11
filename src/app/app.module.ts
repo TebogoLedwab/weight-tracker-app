@@ -9,12 +9,18 @@ import { NavComponent } from './components/nav/nav.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './components/signin/signin.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     SignupComponent,
+    SigninComponent,
+    LandingComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

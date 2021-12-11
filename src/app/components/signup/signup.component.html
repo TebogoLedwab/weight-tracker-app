@@ -58,7 +58,7 @@
   
   
       <div class="text-right">
-        <i id="exampleInputPassword1" class="text-primary">Do you have an
+        <i id="exampleInputPassword1" class="text-primary " (click)="openModal(signin)">Do you have an
           account? Sign In</i>
       </div>
   
@@ -72,4 +72,6 @@
   
   </div>
   
-  
+  <ng-template #signin>
+    <signin></signin>
+  </ng-template>
