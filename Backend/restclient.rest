@@ -1,0 +1,19 @@
+# # # # # # Url for registering a user 
+# POST http://localhost:3500/users/register_users
+# Content-Type: application/json
+
+# {
+#        "name": "Bahumi",
+#       "surname": "Moloisane",
+#        "email":"bahumi@gmail.com",
+#        "password":"12345678"
+# }
+
+# # # # #Url for signing in users
+POST http://localhost:3500/users/login_users
+Content-Type: application/json
+
+{
+       "email": "bahumi@gmail.com",
+       "password": "12345678"
+}
