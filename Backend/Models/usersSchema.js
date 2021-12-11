@@ -20,9 +20,6 @@ const usersSchema = mongoose.Schema({
         type: String,
         required: [true, 'This field is required for security reasons']
     },
-    age: {
-        type: Number,
-    },
     weight: {
         type: String,
     }

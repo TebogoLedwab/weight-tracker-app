@@ -9,11 +9,18 @@
 #        "password":"12345678"
 # }
 
-# # # # #Url for signing in users
-POST http://localhost:3500/users/login_users
-Content-Type: application/json
+# # # # # #Url for signing in users
+# POST http://localhost:3500/users/login_users
+# Content-Type: application/json
 
+# {
+#        "email": "bahumi@gmail.com",
+#        "password": "12345678"
+# }
+
+# # # # #Url for getting all weight entries
+GET http://localhost:3500/weight/get_all_weight
+Content-Type: application/json
 {
-       "email": "bahumi@gmail.com",
-       "password": "12345678"
+
 }

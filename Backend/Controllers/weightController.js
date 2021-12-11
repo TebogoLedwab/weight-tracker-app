@@ -50,4 +50,51 @@ router.get("/get_all_weight", (req, res) => {
   });
 });
 
+//getting weight entry by id
+// router.get("/get_weight/:weightId", (req, res) => {
+//     Weight.find ({ _id: req.params.userId })
+//     .select('_id weight date')
+//     .exec()
+//     .then((doc) => {
+//         console.log("From database", doc);
+//         if(doc) {
+//             res.status(200).json({
+//                 entry: doc,
+//             });
+//         } else if(!_id) {
+//             res.status(404).json({message: "Weight entry does not exist!"})
+//         }
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//         res.status(500).json({
+//             message: "Weight entry does not exist",
+//             error: err
+//         });
+//     });
+// });
+
+//PATCH Route
+//Updating weight entry
+router.patch("/update_weight/:id", async (req, res )=>{
+try{
+    const entry = await Weight.findOne({ _id: req.params.id });
+    if(req.body.weight) {
+        entry.weight  = req.body.weight;
+    }
+    if(req.body.date) {
+        entry.date  = req.body.date;
+    }
+
+    await entry.save();
+    return res.send({
+        message: "Weight successfully updated!",
+        entry
+    });
+} catch {
+    return res.status(404).send({ error: "Weight entry does not exist!"})
+}
+
+});
+
 module.exports = router;
