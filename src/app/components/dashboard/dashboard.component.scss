@@ -1,0 +1,22 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    
+    .dashboard__intro {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .submit{
+            width: 80px;
+            height:40px;
+        }
+
+        .card{
+            width: 90%;
+        }
+    }
+
+   
+}
