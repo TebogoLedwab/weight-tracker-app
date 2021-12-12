@@ -1,0 +1,15 @@
+.weight-list {
+    max-width: 411px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    .weight-item {
+      width: 100%;
+    }
+  
+    .mat-list-base .mat-list-item {
+      min-height: 48px !important;
+      height: auto;
+    }
+  }
+  

@@ -11,7 +11,7 @@ router.post("/weight_entry", async (req, res) => {
   try {
     //add new weight entry
     const newWeight = new Weight({
-      _id: mongoose.Types.ObjectId(),
+      id: mongoose.Types.ObjectId(),
       weight: weight,
       date: date,
     });
@@ -78,7 +78,7 @@ router.get("/get_all_weight", (req, res) => {
 //Updating weight entry
 router.patch("/update_weight/:id", async (req, res )=>{
 try{
-    const entry = await Weight.findOne({ _id: req.params.id });
+    const entry = await Weight.findOne({ id: req.params.id });
     if(req.body.weight) {
         entry.weight  = req.body.weight;
     }
@@ -96,5 +96,20 @@ try{
 }
 
 });
+
+//DELETE
+//Deleting a weight entry
+router.delete('/remove_weight/:id', (req, res) =>{
+  Weight.findByIdAndDelete(req.params.id).then((weight)=> {
+    if(!weight) {
+      return res.status(404).send({
+        error: "Successfully deleted weight entry"
+      });
+    }
+    res.send(weight)
+  }). catch ((error) =>{
+    res.status(500).json(error);
+  })
+} )
 
 module.exports = router;

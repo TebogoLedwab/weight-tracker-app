@@ -1,49 +1,49 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarColor01">
-  
-      <ul class="navbar-nav ml-auto" *ngIf="!userService.is_loggedIn">
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-            aria-expanded="false" aria-label="Toggle navigation" routerLink="/">Home</a>
-        </li>
-        <li class="nav-item" (click)="openModal(signin)">
-          <a class="nav-link" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-            aria-expanded="false" aria-label="Toggle navigation" routerLink="/">Sign in</a>
-        </li>
-        <li class="nav-item" (click)="openModal(signup)">
-          <a class="nav-link" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-            aria-expanded="false" aria-label="Toggle navigation" routerLink="/">Sign up</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto" *ngIf="userService.is_loggedIn">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <li class="nav-item dropdown">
-  
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-            aria-expanded="false">Welcome
-            {{ storeService?.getUser?.name ? shareService.to_titleCase(storeService.getUser.name) : '' }}</a>
-  
-  
-          <div class="dropdown-menu">
-            <a class="dropdown-item" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-              aria-expanded="false" aria-label="Toggle navigation" routerLink="/dash">Dashboard</a>
-            <a class="dropdown-item hand" data-toggle="collapse" data-target="#navbarColor01"
-              aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"
-              (click)="userService.logout()">Sign out</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
-        </li>
-      </ul>
-      
-    </div>
-  </nav>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+
+    <ul class="navbar-nav ml-auto" *ngIf="!userService.isLoggedIn">
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+          aria-expanded="false" aria-label="Toggle navigation" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item" (click)="openModal(signin)">
+        <a class="nav-link" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+          aria-expanded="false" aria-label="Toggle navigation" routerLink="/">Sign in</a>
+      </li>
+      <li class="nav-item" (click)="openModal(signup)">
+        <a class="nav-link" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+          aria-expanded="false" aria-label="Toggle navigation" routerLink="/">Sign up</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="userService.isLoggedIn">
+
+      <li class="nav-item dropdown">
+
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">Welcome
+          {{ storeService?.getUser?.name ? shareService.to_titleCase(storeService.getUser.name) : '' }}</a>
+
+
+        <div class="dropdown-menu">
+          <a class="dropdown-item" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation" routerLink="/dash">Dashboard</a>
+          <a class="dropdown-item hand" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"
+            (click)="userService.logout()">Sign out</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
 
   <ng-template #signin>
     <signin></signin>

@@ -1,0 +1,18 @@
+<div class="weight-list">
+    <app-dashboard></app-dashboard>
+    <mat-card>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngIf="!weights.length"
+            >No weight entries to show</mat-list-item
+          >
+          <mat-list-item *ngFor="let weight of weights">
+            <app-weight-item
+              [weight]="weight"
+              class="weight-item"
+            ></app-weight-item>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>

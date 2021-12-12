@@ -1,14 +1,32 @@
 <div class="dashboard">
     <div class="dashboard__intro">
-        <div class="card border-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header text-center">Enter your weight</div>
-            <div class="card-body">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputWeight" placeholder="Your weight">
-                    <br>
-                    <button type="button" class="submit btn btn-outline-primary">Submit</button>
-                  </div>
+        <form (ngSubmit)="save(f)" #f="ngForm">
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="New Weight (Kg)"
+                type="number"
+                name="weight"
+                (input)="weightEntry.weight"
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="Choose a date"
+                name="date"
+                (dateInput)="weightEntry.date"
+              />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div class="weight-form-button">
+              <button mat-mini-fab color="basic" type="submit">
+                <fa-icon [icon]="faPlus"></fa-icon>
+              </button>
             </div>
-          </div>
+          </form>
+          
     </div>
 </div>

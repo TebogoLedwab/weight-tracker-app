@@ -50,10 +50,14 @@ export class UserService {
   }
 
     // return a boolean true if user logged in
-    get is_loggedIn(): boolean {
-      let user = localStorage.getItem("user");
-      return user !== null ? true : false;
+    get isLoggedIn(): boolean {
+      let user = localStorage.getItem('user')
+      return user !== null ? true: false;
     }
+    // get isLoggedIn(): boolean {
+    //   let user = localStorage.getItem("user");
+    //   return user !== null ? true : false;
+    // }
 
     //user logout
     logout(){

@@ -12,6 +12,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './components/signin/signin.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatNativeDateModule } from '@angular/material/core';
+import {  MatCardModule } from '@angular/material/card'
+import { MatGridListModule } from '@angular/material/grid-list';
+import {  MatListModule } from '@angular/material/list';
+import {  MatInputModule } from '@angular/material/input';
+import {  MatDatepickerModule } from '@angular/material/datepicker';
+import { MatButtonModule } from '@angular/material/button';
+import { WeightListComponent } from './components/weight-list/weight-list.component';
+import { WeightItemComponent } from './components/weight-item/weight-item.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +31,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SigninComponent,
     LandingComponent,
     DashboardComponent,
+    WeightListComponent,
+    WeightItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +50,20 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ModalModule.forRoot(),
     HttpClientModule,
     FormsModule,
+    MatCardModule,
+    MatGridListModule,
+    MatListModule,
+    MatButtonModule,
+    FontAwesomeModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
